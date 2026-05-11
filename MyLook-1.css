@@ -1,0 +1,775 @@
+/* ============================================
+   MMA Web - Master Stylesheet
+   MyLook-1.css
+   ============================================ */
+
+/* ============================================
+   GENERAL STYLES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #e8f0f7; /* Soft blue-grey background */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ============================================
+   PAGE STRUCTURE
+   ============================================ */
+
+.page-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f8fb;
+    flex-grow: 1;
+}
+
+/* ============================================
+   HEADER & TITLE
+   ============================================ */
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1a5f7a;
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.page-heading {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #2a7a9e;
+    margin: 30px 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #2a7a9e;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+
+nav {
+    background-color: #1a5f7a;
+    padding: 0;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    flex: 1;
+    min-width: 150px;
+}
+
+nav a {
+    display: block;
+    padding: 15px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+nav a:hover {
+    background-color: #2a7a9e;
+}
+
+nav li:last-child a {
+    border-right: none;
+}
+
+nav .active {
+    background-color: #ff6b6b;
+    font-weight: bold;
+}
+
+/* ============================================
+   CONTENT LAYERS & POSITIONING
+   ============================================ */
+
+.content-layer {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.layer-header {
+    position: relative;
+    z-index: 10;
+    margin-bottom: 15px;
+}
+
+.layer-body {
+    position: relative;
+    z-index: 5;
+}
+
+.layer-footer {
+    position: relative;
+    z-index: 1;
+    margin-top: 15px;
+}
+
+/* ============================================
+   TEXT STYLES
+   ============================================ */
+
+p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+h2 {
+    font-size: 1.6rem;
+    color: #2a7a9e;
+    margin: 20px 0 15px 0;
+}
+
+h3 {
+    font-size: 1.3rem;
+    color: #34495e;
+    margin: 15px 0 10px 0;
+}
+
+strong {
+    color: #1a5f7a;
+}
+
+/* ============================================
+   IMAGES
+   ============================================ */
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.image-container {
+    position: relative;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.image-caption {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    margin-top: 8px;
+}
+
+/* ============================================
+   COLLAGE STYLES (Page 1)
+   ============================================ */
+
+.collage {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+    align-items: start;
+}
+
+.collage-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.collage-item:hover {
+    transform: scale(1.05);
+}
+
+.collage-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin: 0;
+}
+
+/* ============================================
+   PROFILE INFORMATION (Page 1 & 2)
+   ============================================ */
+
+.profile-info {
+    background-color: #f0f4f8;
+    padding: 20px;
+    border-left: 4px solid #2a7a9e;
+    border-radius: 3px;
+    margin: 15px 0;
+}
+
+.profile-item {
+    display: flex;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.profile-label {
+    font-weight: bold;
+    color: #1a5f7a;
+    min-width: 150px;
+}
+
+.profile-value {
+    color: #333;
+    flex-grow: 1;
+}
+
+.group-member {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.group-member:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* ============================================
+   AUDIO/MEDIA PLAYER (Page 3)
+   ============================================ */
+
+.media-container {
+    background-color: #f0f4f8;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.media-intro {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #333;
+    font-style: italic;
+}
+
+audio {
+    width: 100%;
+    max-width: 400px;
+    margin: 15px 0;
+}
+
+/* ============================================
+   COURSE LIST (Page 4)
+   ============================================ */
+
+.courses-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.courses-table thead {
+    background-color: #2a7a9e;
+    color: #fff;
+}
+
+.courses-table th,
+.courses-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.courses-table th {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.courses-table tr:hover {
+    background-color: #f5f8fb;
+}
+
+.courses-table tr:nth-child(even) {
+    background-color: #f9fbfd;
+}
+
+/* ============================================
+   ANIMATION CONTAINER (Page 4)
+   ============================================ */
+
+.animation-container {
+    background-color: #f0f4f8;
+    padding: 30px;
+    border-radius: 5px;
+    margin: 20px 0;
+    text-align: center;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.animation-intro {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* ============================================
+   REFERENCES/LINKS (Page 5)
+   ============================================ */
+
+.references-list {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.references-list li {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.references-list li:before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #2a7a9e;
+    font-weight: bold;
+}
+
+.reference-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9fbfd;
+    border-left: 3px solid #2a7a9e;
+    border-radius: 3px;
+}
+
+.reference-item a {
+    color: #0066cc;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.reference-item a:hover {
+    text-decoration: underline;
+}
+
+.reference-category {
+    font-weight: bold;
+    color: #1a5f7a;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+    background-color: #1a5f7a;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+    font-size: 0.95rem;
+}
+
+footer p {
+    margin: 0;
+    color: #fff;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-muted {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.highlight {
+    background-color: #fff3cd;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - TABLETS (768px and below)
+   ============================================ */
+
+@media (max-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+
+    .page-title {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+
+    .page-heading {
+        font-size: 1.5rem;
+    }
+
+    /* Navigation Stack */
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        min-width: 100%;
+    }
+
+    nav a {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 12px;
+    }
+
+    nav li:last-child a {
+        border-bottom: none;
+    }
+
+    /* Collage Responsive */
+    .collage {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .collage-item img {
+        height: 150px;
+    }
+
+    /* Page Container Padding */
+    .page-container {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    /* Profile Items */
+    .profile-label {
+        min-width: 130px;
+    }
+
+    /* Content Layer */
+    .content-layer {
+        padding: 15px;
+    }
+
+    /* Courses Table */
+    .courses-table th,
+    .courses-table td {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+    /* Audio Player */
+    audio {
+        max-width: 100%;
+    }
+
+    /* Animation Container */
+    .animation-container {
+        padding: 20px;
+        min-height: 250px;
+    }
+
+    /* Footer */
+    footer {
+        font-size: 0.85rem;
+        padding: 12px;
+    }
+
+    footer p {
+        word-break: break-word;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE (480px and below)
+   ============================================ */
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+
+    .page-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .page-heading {
+        font-size: 1.2rem;
+        margin: 15px 0 12px 0;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #2a7a9e;
+    }
+
+    /* Navigation - Very Compact */
+    nav {
+        margin-bottom: 20px;
+    }
+
+    nav a {
+        padding: 12px 8px;
+        font-size: 0.9rem;
+    }
+
+    /* Collage Single Column */
+    .collage {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .collage-item img {
+        height: 200px;
+    }
+
+    /* Page Container */
+    .page-container {
+        padding: 10px;
+        margin: 0;
+    }
+
+    /* Content Layer */
+    .content-layer {
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 3px;
+    }
+
+    /* Text Sizing */
+    h2 {
+        font-size: 1.2rem;
+        margin: 15px 0 10px 0;
+    }
+
+    h3 {
+        font-size: 1rem;
+        margin: 12px 0 8px 0;
+    }
+
+    h4 {
+        font-size: 0.95rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+
+    /* Profile Items - Stack Vertically */
+    .profile-item {
+        flex-direction: column;
+        margin-bottom: 8px;
+    }
+
+    .profile-label {
+        font-size: 0.9rem;
+        margin-bottom: 3px;
+        min-width: auto;
+    }
+
+    .profile-value {
+        font-size: 0.9rem;
+    }
+
+    .profile-info {
+        padding: 15px;
+        margin: 12px 0;
+    }
+
+    /* Group Member Sections */
+    .group-member {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+
+    /* Images */
+    img {
+        margin: 8px 0;
+        border-radius: 3px;
+    }
+
+    .image-caption {
+        font-size: 0.8rem;
+        margin-top: 5px;
+    }
+
+    /* Courses Table - Responsive */
+    .courses-table {
+        margin: 15px 0;
+        font-size: 0.85rem;
+    }
+
+    .courses-table th,
+    .courses-table td {
+        padding: 8px 6px;
+        font-size: 0.85rem;
+    }
+
+    .courses-table th {
+        font-size: 0.9rem;
+    }
+
+    /* Audio Player */
+    audio {
+        max-width: 100%;
+        margin: 12px 0;
+    }
+
+    .media-container {
+        padding: 15px;
+        margin: 15px 0;
+    }
+
+    .media-intro {
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+    }
+
+    /* Animation Container */
+    .animation-container {
+        padding: 15px;
+        min-height: 200px;
+        margin: 15px 0;
+    }
+
+    .animation-intro {
+        font-size: 0.9rem;
+    }
+
+    /* Reference Items */
+    .reference-item {
+        padding: 12px;
+        margin-bottom: 15px;
+    }
+
+    .reference-category {
+        font-size: 1rem;
+        margin-top: 15px;
+        margin-bottom: 8px;
+    }
+
+    /* Text Muted */
+    .text-muted {
+        font-size: 0.8rem;
+    }
+
+    /* Footer */
+    footer {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+
+    footer p {
+        line-height: 1.4;
+    }
+
+    /* Lists */
+    ul {
+        margin-left: 15px;
+    }
+
+    li {
+        margin-bottom: 8px;
+    }
+
+    /* Layer Footer */
+    .layer-footer {
+        margin-top: 12px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - EXTRA SMALL (320px and below)
+   ============================================ */
+
+@media (max-width: 320px) {
+    html {
+        font-size: 13px;
+    }
+
+    .page-title {
+        font-size: 1.3rem;
+        letter-spacing: 0;
+    }
+
+    nav a {
+        padding: 10px 6px;
+        font-size: 0.85rem;
+    }
+
+    .page-container {
+        padding: 8px;
+    }
+
+    .content-layer {
+        padding: 10px;
+    }
+
+    .courses-table th,
+    .courses-table td {
+        padding: 6px 4px;
+    }
+}

@@ -1,0 +1,12 @@
+BRIEF REPORT - MMA Web Project
+
+Optimal Viewing:
+Platform: Windows/Mac/Linux with modern web browser (Chrome, Firefox, Safari, Edge)
+Resolution: 1024x768 pixels minimum (responsive for mobile devices)
+
+Home Page Filename: index.html
+
+Difficulties Encountered / Changes to Design Specification:
+[To be filled in with any issues faced during development or deviations from original Part A design specifications]
+
+[Note: This report should not exceed 30 words total - keep concise and factual]
