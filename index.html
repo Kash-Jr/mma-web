@@ -31,21 +31,24 @@
             <div class="layer-body">
                 <!-- Collage Section -->
                 <p class="text-center" style="font-style: italic; color: #666; margin-bottom: 20px;">
-                    Image collage to be placed here - containing all images used throughout the website
+                    Portfolio collage
                 </p>
                 <div class="collage">
-                    <!-- Placeholder for collage items -->
+                    <!-- Collage items with student IDs -->
                     <div class="collage-item">
-                        <img src="images/placeholder-1.jpg" alt="Portfolio Image 1">
+                        <canvas class="collage-canvas" data-student-id="224076760" data-member-name="Senia Shipepe" width="300" height="300"></canvas>
                     </div>
                     <div class="collage-item">
-                        <img src="images/placeholder-2.jpg" alt="Portfolio Image 2">
+                        <canvas class="collage-canvas" data-student-id="223085618" data-member-name="Phrancina Ndjambula" width="300" height="300"></canvas>
                     </div>
                     <div class="collage-item">
-                        <img src="images/placeholder-3.jpg" alt="Portfolio Image 3">
+                        <canvas class="collage-canvas" data-student-id="223017183" data-member-name="Faith Hamutenya" width="300" height="300"></canvas>
                     </div>
                     <div class="collage-item">
-                        <img src="images/placeholder-4.jpg" alt="Portfolio Image 4">
+                        <canvas class="collage-canvas" data-student-id="223043710" data-member-name="Andris Kaishungu" width="300" height="300"></canvas>
+                    </div>
+                    <div class="collage-item">
+                        <canvas class="collage-canvas" data-student-id="223091839" data-member-name="Alvine Murangi" width="300" height="300"></canvas>
                     </div>
                 </div>
 
@@ -237,5 +240,79 @@
             Bachelor of Informatics | Multimedia Project
         </p>
     </footer>
+
+    <!-- Student ID Embedding Script -->
+    <script>
+        // Map member names to image filenames (using seated photos)
+        const memberImageMap = {
+            'Senia Shipepe': 'images/Senia seated.jpeg',
+            'Phrancina Ndjambula': 'images/placeholder-seated.jpeg', // To be added when image available
+            'Faith Hamutenya': 'images/placeholder-seated.jpeg', // To be added when image available
+            'Andris Kaishungu': 'images/Andris seated.jpeg',
+            'Alvine Murangi': 'images/Alvine seated.jpeg'
+        };
+
+        // Function to draw image on canvas with student ID embedded
+        function drawCollageItem(canvas) {
+            const studentId = canvas.getAttribute('data-student-id');
+            const memberName = canvas.getAttribute('data-member-name');
+            const imagePath = memberImageMap[memberName];
+            
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            
+            img.onload = function() {
+                // Calculate center crop to make 1:1 square
+                const size = Math.min(img.width, img.height);
+                const offsetX = (img.width - size) / 2;
+                const offsetY = (img.height - size) / 2;
+                
+                // Draw cropped square image on canvas
+                ctx.drawImage(
+                    img,
+                    offsetX,      // source x
+                    offsetY,      // source y
+                    size,         // source width
+                    size,         // source height
+                    0,            // destination x
+                    0,            // destination y
+                    canvas.width, // destination width
+                    canvas.height // destination height
+                );
+                
+                // Draw semi-transparent background for text readability
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+                ctx.fillRect(5, canvas.height - 25, 120, 20);
+                
+                // Draw student ID text in Arial, size 8
+                ctx.font = '8px Arial';
+                ctx.fillStyle = '#FFFFFF';
+                ctx.textBaseline = 'bottom';
+                ctx.fillText('Student ID: ' + studentId, 10, canvas.height - 8);
+            };
+            
+            img.onerror = function() {
+                // Fallback: show placeholder with student ID
+                ctx.fillStyle = '#e0e0e0';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#333';
+                ctx.font = 'bold 16px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText(memberName, canvas.width / 2, canvas.height / 2 - 20);
+                ctx.font = '8px Arial';
+                ctx.fillText('ID: ' + studentId, canvas.width / 2, canvas.height / 2 + 20);
+            };
+            
+            if (imagePath) {
+                img.src = imagePath;
+            }
+        }
+
+        // Initialize all collage items when page loads
+        window.addEventListener('load', function() {
+            const canvases = document.querySelectorAll('.collage-canvas');
+            canvases.forEach(canvas => drawCollageItem(canvas));
+        });
+    </script>
 </body>
 </html>
