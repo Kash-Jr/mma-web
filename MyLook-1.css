@@ -252,7 +252,6 @@ img {
 .profile-info {
     background-color: #f0f4f8;
     padding: 20px;
-    border-left: 4px solid #2a7a9e;
     border-radius: 3px;
     margin: 15px 0;
 }
@@ -404,7 +403,6 @@ audio {
     margin-bottom: 20px;
     padding: 15px;
     background-color: #f9fbfd;
-    border-left: 3px solid #2a7a9e;
     border-radius: 3px;
 }
 

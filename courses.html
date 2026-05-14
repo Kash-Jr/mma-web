@@ -79,27 +79,84 @@
 
                 <!-- Animation Section -->
                 <h3 style="margin-top: 40px;">Project Portfolio Animation</h3>
-                <div class="animation-container">
-                    <div>
-                        <p class="animation-intro" style="color: #999; font-size: 0.9rem;">
-                            <em>
-                                Animation includes: All multimedia images used in this project 
-                                (excluding banner images) resized to match the smallest image dimensions
-                            </em>
-                        </p>
-                        <!-- 
-                        Flash/SWF file embedding will be added here:
-                        <object data="flash/portfolio-animation.swf" type="application/x-shockwave-flash" width="100%" height="400">
-                            <param name="movie" value="flash/portfolio-animation.swf">
-                            <p>Flash animation not supported in this browser.</p>
-                        </object>
-                        -->
-                    </div>
+                <p class="animation-intro" style="text-align: center; font-style: italic; color: #666; margin-bottom: 10px;">
+                    Animation includes: All multimedia images used in this project displayed one by one at random
+                </p>
+                <div class="animation-container" id="animation-slideshow" style="position: relative; overflow: hidden; min-height: 400px;">
+                    <img src="images/Alvine seated.jpeg" class="slideshow-img" alt="Alvine seated">
+                    <img src="images/Alvine standing.jpeg" class="slideshow-img" alt="Alvine standing">
+                    <img src="images/Andris seated.jpeg" class="slideshow-img" alt="Andris seated">
+                    <img src="images/Andris standing.jpeg" class="slideshow-img" alt="Andris standing">
+                    <img src="images/Content Writer Image.jpg" class="slideshow-img" alt="Content Writer">
+                    <img src="images/Designer Image.jpg" class="slideshow-img" alt="Designer">
+                    <img src="images/Editor Image.jpg" class="slideshow-img" alt="Editor">
+                    <img src="images/Faith seated.jpeg" class="slideshow-img" alt="Faith seated">
+                    <img src="images/Faith standing.jpeg" class="slideshow-img" alt="Faith standing">
+                    <img src="images/IT Technician-Data Analyst Image.jpg" class="slideshow-img" alt="IT Technician Data Analyst">
+                    <img src="images/Phrancina seated.jpeg" class="slideshow-img" alt="Phrancina seated">
+                    <img src="images/Phrancina standing.jpeg" class="slideshow-img" alt="Phrancina standing">
+                    <img src="images/Senia seated.jpeg" class="slideshow-img" alt="Senia seated">
+                    <img src="images/Senia standing.jpeg" class="slideshow-img" alt="Senia standing">
+                    <img src="images/Web Developer Image.jpg" class="slideshow-img" alt="Web Developer">
                 </div>
 
-                <p class="text-muted">
-                    <em>These courses form the core of our third-year informatics education.</em>
-                </p>
+                <style>
+                    /* Slideshow styles */
+                    #animation-slideshow {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    #animation-slideshow .slideshow-img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                        opacity: 0;
+                        transition: opacity 1s ease-in-out;
+                        margin: 0;
+                        border-radius: 0;
+                        box-shadow: none;
+                    }
+
+                    #animation-slideshow .slideshow-img.active {
+                        opacity: 1;
+                    }
+                </style>
+
+                <script>
+                    (function () {
+                        const container = document.getElementById('animation-slideshow');
+                        const images = container.querySelectorAll('.slideshow-img');
+                        let currentIndex = -1;
+
+                        function showRandomImage() {
+                            let nextIndex;
+                            // Pick a random image that is different from the current one
+                            do {
+                                nextIndex = Math.floor(Math.random() * images.length);
+                            } while (nextIndex === currentIndex && images.length > 1);
+
+                            // Fade out current image
+                            if (currentIndex >= 0) {
+                                images[currentIndex].classList.remove('active');
+                            }
+
+                            // Fade in next image
+                            images[nextIndex].classList.add('active');
+                            currentIndex = nextIndex;
+                        }
+
+                        // Show the first image immediately
+                        showRandomImage();
+
+                        // Cycle every 3 seconds
+                        setInterval(showRandomImage, 3000);
+                    })();
+                </script>
             </div>
         </div>
     </div>
