@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMA Web Project - Technical Documentation</title>
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #2a7a9e;
+            --accent: #ff6b6b;
+            --bg: #f5f8fb;
+            --text: #333;
+            --border: #ddd;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: #fff;
+            margin: 0;
+            display: flex;
+        }
+        nav.sidebar {
+            width: 250px;
+            background: var(--bg);
+            padding: 20px;
+            border-right: 1px solid var(--border);
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            overflow-y: auto;
+        }
+        nav.sidebar h3 { color: var(--primary); }
+        nav.sidebar ul { list-style: none; padding: 0; }
+        nav.sidebar li { margin-bottom: 10px; }
+        nav.sidebar a { text-decoration: none; color: var(--secondary); font-size: 0.95rem; }
+        nav.sidebar a:hover { color: var(--accent); }
+        main {
+            flex: 1;
+            padding: 40px;
+            max-width: 900px;
+        }
+        h1, h2, h3 { color: var(--primary); }
+        h2 { border-bottom: 2px solid var(--secondary); padding-bottom: 5px; margin-top: 40px; }
+        pre {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.9rem;
+        }
+        code { font-family: 'Courier New', Courier, monospace; }
+        .alert {
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid;
+            background: var(--bg);
+        }
+        .alert-warning { border-color: #f39c12; background: #fdfae6; }
+        .alert-info { border-color: var(--secondary); }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid var(--border); padding: 10px; text-align: left; }
+        th { background: var(--bg); color: var(--primary); }
+        .adr-block { border: 1px solid var(--border); padding: 15px; border-radius: 5px; margin-bottom: 20px; }
+        .adr-block h4 { margin-top: 0; color: var(--secondary); }
+    </style>
+</head>
+<body>
+
+<nav class="sidebar">
+    <h3>Contents</h3>
+    <ul>
+        <li><a href="#audience">1. Target Audience</a></li>
+        <li><a href="#glossary">2. Glossary</a></li>
+        <li><a href="#boundaries">3. System Boundaries & Setup</a></li>
+        <li><a href="#components">4. Critical Components</a></li>
+        <li><a href="#adrs">5. Decision Records (ADRs)</a></li>
+        <li><a href="#failure-modes">6. Failure Modes</a></li>
+    </ul>
+</nav>
+
+<main>
+    <h1>MMA Web Project - Technical Documentation</h1>
+    <p><em>Living technical documentation for the Multimedia Applications (MMA710S) portfolio website.</em></p>
+
+    <section id="audience">
+        <h2>1. Target Audience</h2>
+        <p>This documentation is explicitly written for:</p>
+        <ul>
+            <li><strong>Evaluators/Lecturers:</strong> Needing to understand how technical requirements (e.g., animations, audio, styling) were implemented without restricted technologies (like frames or deprecated Flash).</li>
+            <li><strong>Future Maintainers/Students:</strong> Reviewing the source code for reference on vanilla JavaScript component implementation (Custom Audio Player, Canvas Watermarking, Image Slider).</li>
+        </ul>
+        <div class="alert alert-info">
+            <strong>Note:</strong> This document assumes a working knowledge of HTML5, CSS3, and Vanilla DOM manipulation.
+        </div>
+    </section>
+
+    <section id="glossary">
+        <h2>2. Glossary</h2>
+        <table>
+            <tr><th>Term</th><th>Definition</th></tr>
+            <tr><td><strong>Canvas Watermarker</strong></td><td>The JavaScript module in <code>index.html</code> that draws profile images onto an HTML5 <code>&lt;canvas&gt;</code> and overlays the student ID text.</td></tr>
+            <tr><td><strong>Custom Audio Player</strong></td><td>The UI wrapper in <code>education.html</code> that controls the hidden native <code>&lt;audio&gt;</code> element via JavaScript.</td></tr>
+            <tr><td><strong>Vertical Slider Animation</strong></td><td>The 2-column image animation in <code>courses.html</code> utilizing CSS transitions and JavaScript <code>setInterval</code> (sliding up/down).</td></tr>
+            <tr><td><strong>Content Layer</strong></td><td>The primary CSS class (<code>.content-layer</code>) used universally across all pages to host page-specific information above the background.</td></tr>
+        </table>
+    </section>
+
+    <section id="boundaries">
+        <h2>3. System Boundaries & Setup</h2>
+        <p>The application is a purely static, client-side website. It has no build step, no external APIs, and no backend dependencies.</p>
+        
+        <h3>Dependencies & Environment</h3>
+        <ul>
+            <li><strong>Runtime:</strong> Any modern browser (Chrome 90+, Edge 90+, Firefox 88+, Safari 14+).</li>
+            <li><strong>Resolution:</strong> Optimized for <code>1024x768</code> desktop view, responsive down to <code>320px</code>.</li>
+            <li><strong>External Libraries:</strong> None. 100% Vanilla JS and CSS.</li>
+        </ul>
+
+        <h3>Directory Structure Constraints</h3>
+        <p>For the site to function locally, the following directory structure must be strictly maintained relative to the HTML files:</p>
+        <pre><code>/images/   # Contains .jpeg and .jpg assets
+/audio/    # Contains "Education Background Audio.ogg"
+/MyLook-1.css # Global stylesheet</code></pre>
+    </section>
+
+    <section id="components">
+        <h2>4. Critical Components & Configurations</h2>
+
+        <h3>4.1 Canvas Watermarker (index.html)</h3>
+        <p>Instead of hardcoding watermarks into images, <code>index.html</code> dynamically draws the image and text onto a canvas. This requires matching the <code>data-member-name</code> attribute to the <code>memberImageMap</code>.</p>
+        <pre><code>// Exact Configuration from index.html (Lines 237-244)
+const memberImageMap = {
+    'Senia Shipepe': 'images/Senia seated.jpeg',
+    'Phrancina Ndjambula': 'images/Phrancina seated.jpeg', 
+    'Faith Hamutenya': 'images/Faith seated.jpeg', 
+    'Andris Kaishungu': 'images/Andris seated.jpeg',
+    'Alvine Murangi': 'images/Alvine seated.jpeg'
+};</code></pre>
+
+        <h3>4.2 Custom Audio Player (education.html)</h3>
+        <p>The native audio element is hidden (<code>display: none</code> implicitly via custom controls). The custom UI binds to the native element events (<code>loadedmetadata</code>, <code>timeupdate</code>, <code>ended</code>).</p>
+        <p><strong>Critical Element:</strong> The source file must remain an OGG format as defined in the source:</p>
+        <pre><code>&lt;audio id="edu-audio" preload="metadata"&gt;
+    &lt;source src="audio/Education Background Audio.ogg" type="audio/ogg"&gt;
+&lt;/audio&gt;</code></pre>
+
+        <h3>4.3 Vertical Slider Animation (courses.html)</h3>
+        <p>The animation relies on 15 image paths hardcoded into the <code>imageSources</code> array in <code>courses.html</code>. Missing images will result in blank slides.</p>
+        <pre><code>// Timing configuration
+// Left column slides UP every 3000ms
+setInterval(..., 3000);
+
+// Right column slides DOWN every 3000ms, offset by 1500ms
+setTimeout(function () { setInterval(..., 3000); }, 1500);</code></pre>
+    </section>
+
+    <section id="adrs">
+        <h2>5. Architecture Decision Records (ADRs)</h2>
+
+        <div class="adr-block">
+            <h4>ADR 1: Dynamic Canvas Watermarking vs. Pre-rendered Images</h4>
+            <p><strong>Context:</strong> The assignment requires all images to have a Student ID watermark (Arial, size 8).</p>
+            <p><strong>Decision:</strong> Use HTML5 <code>&lt;canvas&gt;</code> on the home page (<code>index.html</code>) to draw the image and overlay the text dynamically via JS.</p>
+            <p><strong>Tradeoffs:</strong> Increases client-side execution slightly. Requires a fallback (implemented) if the image path fails. Prevents the need to destructively edit the original image assets, maintaining clean source files.</p>
+        </div>
+
+        <div class="adr-block">
+            <h4>ADR 2: Vanilla JS Animation vs. Adobe Flash</h4>
+            <p><strong>Context:</strong> The brief requested a "Flash animation", but Adobe Flash is globally deprecated and blocked by all modern browsers.</p>
+            <p><strong>Decision:</strong> Implemented a continuous, two-column vertical sliding animation using pure CSS (transforms) and Vanilla JavaScript in <code>courses.html</code>.</p>
+            <p><strong>Tradeoffs:</strong> Ensures 100% compatibility across all modern devices (including mobile/iOS where Flash never worked) while strictly adhering to the spirit of the "animation" requirement without using video formats.</p>
+        </div>
+
+        <div class="adr-block">
+            <h4>ADR 3: Custom Audio UI vs Native <code>controls</code></h4>
+            <p><strong>Context:</strong> Native audio controls look vastly different across Chrome, Firefox, and Safari, potentially breaking the site's design language.</p>
+            <p><strong>Decision:</strong> Built a custom audio player using SVG icons and JS event listeners mapped to the hidden HTMLAudioElement.</p>
+            <p><strong>Tradeoffs:</strong> Adds ~130 lines of JS/CSS to <code>education.html</code>, but guarantees visual consistency with the <code>#1a5f7a</code> and <code>#ff6b6b</code> color palette.</p>
+        </div>
+    </section>
+
+    <section id="failure-modes">
+        <h2>6. Failure Modes & Troubleshooting</h2>
+        <p>Do not assume the "happy path". Review these common failure states if the application breaks:</p>
+
+        <table>
+            <tr>
+                <th>Symptom</th>
+                <th>Root Cause</th>
+                <th>Recovery / Resolution</th>
+            </tr>
+            <tr>
+                <td><strong>index.html:</strong> Grey boxes appear instead of profile images in the Collage.</td>
+                <td>Image paths in <code>memberImageMap</code> are incorrect, or files are missing. Canvas <code>onerror</code> fallback triggered.</td>
+                <td>Verify that <code>images/Senia seated.jpeg</code> (and others) exactly match the case and spacing of the actual files in the <code>images/</code> directory.</td>
+            </tr>
+            <tr>
+                <td><strong>index.html:</strong> Canvas images fail to load when viewed via <code>file://</code> protocol.</td>
+                <td>Strict CORS policies in some browsers block canvas image manipulation from local file systems.</td>
+                <td>Serve the directory over a local web server (e.g., VS Code Live Server, or <code>npx serve</code>), or test in Firefox which is more lenient with local file canvas drawing.</td>
+            </tr>
+            <tr>
+                <td><strong>education.html:</strong> Audio player time says <code>0:00 / 0:00</code> and won't play.</td>
+                <td>The browser cannot decode the <code>.ogg</code> file, or the file is missing from the <code>audio/</code> directory.</td>
+                <td>Ensure the file is named exactly <code>Education Background Audio.ogg</code>. If testing on older Safari versions, OGG may not be supported (consider providing an MP3 fallback source if required by the evaluator).</td>
+            </tr>
+            <tr>
+                <td><strong>courses.html:</strong> Animation columns have blank gaps while sliding.</td>
+                <td>One or more image paths in the <code>imageSources</code> array are invalid (404 Not Found).</td>
+                <td>Check the browser console (F12) for 404 errors. Ensure all 15 images listed in the array physically exist in the <code>images/</code> folder.</td>
+            </tr>
+            <tr>
+                <td><strong>All Pages:</strong> Layout is completely broken, background is white.</td>
+                <td>The CSS file is not loading.</td>
+                <td>Ensure <code>MyLook-1.css</code> is in the exact same directory as the HTML files. Check case sensitivity (Linux/Unix servers are case-sensitive).</td>
+            </tr>
+        </table>
+    </section>
+
+</main>
+
+<script>
+    // Smooth scrolling for sidebar navigation
+    document.querySelectorAll('.sidebar a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if(targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 20,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>

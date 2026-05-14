@@ -1,9 +1,27 @@
-# MMA WEB PROJECT - PART A: WEBSITE DESIGN SPECIFICATIONS
+# MMA710S MULTIMEDIA APPLICATIONS
+# PROJECT PART A: WEBSITE DESIGN SPECIFICATIONS
 
-**Project:** Multimedia Assignment - Part A  
-**Date Submitted:** May 7, 2026  
-**Group:** Bachelor of Informatics Programme  
-**Status:** Ready for Submission
+**Course:** MMA710S Multimedia Applications  
+**Assessment Task:** Project Part A – Website Design  
+**Due Date:** 29 April 2026 @ 23:59  
+**Storyboards:** 5 Marks  
+**Design Specifications:** 15 Marks (Planning Document)  
+**Submission:** Zipped folder e-mailed to jbillawer@nust.na and uploaded on MS Teams
+
+---
+
+**Group Members:**
+
+| # | Full Name | Student ID |
+|---|-----------|------------|
+| 1 | Senia Shipepe | 224076760 |
+| 2 | Phrancina Sunday Ndjambula | 223085618 |
+| 3 | Faith Miriam Hamutenya | 223017183 |
+| 4 | Andris Junior Etuna Kaishungu | 223043710 |
+| 5 | Alvine Murangi | 223091839 |
+
+**Programme:** Bachelor of Informatics  
+**Institution:** Namibia University of Science and Technology (NUST)
 
 ---
 
@@ -11,35 +29,35 @@
 
 1. [Introduction/Goal](#1-introductiongoal)
 2. [Target Audience](#2-target-audience)
-3. [Site Layout - Flowchart](#3-site-layout--flowchart)
+3. [Site Layout (Flowchart)](#3-site-layout-flowchart)
 4. [Navigation Scheme](#4-navigation-scheme)
-5. [Visual Elements/Style](#5-visual-elementsstyle--look-of-pages)
+5. [Visual Elements/Style](#5-visual-elementsstyle)
 6. [Content Details](#6-content-details)
 7. [Specific Multimedia Content](#7-specific-multimedia-content)
-8. [Testing Plan](#8-testing-plan)
+8. [Testing](#8-testing)
 9. [References](#9-references)
 
 ---
 
 ## 1. INTRODUCTION/GOAL
 
-### What is this project?
+### What We Are Making
 
-This MMA Web portfolio project is an educational multimedia website showcasing the academic and professional development of Bachelor of Informatics students. The website serves as a digital portfolio that integrates HTML, CSS, and multimedia elements to create a cohesive online presence.
+A 5-page multimedia portfolio website showcasing our group's academic profiles, professional aspirations, educational backgrounds, current coursework, and project references. The website integrates HTML, CSS, images, audio, and animation into a cohesive digital product.
 
-### Why are we making it?
+### Why We Are Making It
 
-Beyond fulfilling an educational assignment, this project demonstrates the practical application of multimedia development skills in creating professional web content. It provides valuable experience in:
+This project demonstrates the practical application of multimedia development skills acquired in the MMA710S course. Beyond fulfilling the assignment requirements, it serves as:
 
-- **Web Design & Development:** Understanding the full lifecycle of website creation from planning to implementation
-- **Portfolio Creation:** Building a professional online presence to attract potential employers
-- **Multimedia Integration:** Combining various media types (images, audio, animation) in a coherent digital product
-- **Project Management:** Collaborating as a team to deliver a complete multimedia solution
-- **Industry-Standard Practices:** Applying real-world web development methodologies and design principles
+- A **digital portfolio** presenting our professional and academic identities
+- A practical exercise in **web design and development** from planning through implementation
+- A demonstration of **multimedia integration** — combining images, audio, and animation effectively
+- Evidence of **collaborative project management** across a 5-member team
+- Application of **industry-standard practices** in web development and design specification
 
 ### Expected Outcome
 
-A fully functional, professionally designed 5-page website that effectively communicates the team's skills, experience, and educational background while adhering to modern web standards and best practices.
+A fully functional, professionally styled 5-page website (index.html, experience.html, education.html, courses.html, references.html) that adheres strictly to the assignment brief, communicates our group's skills and backgrounds effectively, and demonstrates competency in multimedia web development.
 
 ---
 
@@ -48,109 +66,91 @@ A fully functional, professionally designed 5-page website that effectively comm
 ### Primary Audience
 
 **Academics & Educators**
-- University lecturers and academic advisors evaluating multimedia competency
+- University lecturers (Mr Akinsola, Mr Billawer) evaluating multimedia competency
 - Assessment personnel reviewing assignment submissions
 - Programme coordinators assessing project quality
 
 **Potential Employers**
 - IT and multimedia companies reviewing digital portfolios
-- HR departments evaluating technical skills
-- Recruitment specialists in the technology sector
+- HR departments evaluating technical skills of Bachelor of Informatics graduates
+- Recruitment specialists in the Namibian technology sector
 
 **Peers & Students**
-- Other informatics students seeking inspiration or reference material
+- Fellow Bachelor of Informatics students seeking inspiration or reference
 - Classmates interested in multimedia project standards
-- Student community members exploring career paths
 
 ### Secondary Audience
 
 - General public accessing the portfolio through personal networks
 - Industry professionals interested in graduate capabilities
-- Family members of group participants
 
-### Audience Expectations & Technical Capabilities
+### Audience Technical Profile
 
-- **Expected Viewing Platform:** Desktop computers (primary), tablets (secondary), mobile devices
-- **Technical Capability:** Medium to high (tech-savvy audience)
-- **Browser Compatibility:** Modern browsers (Chrome, Firefox, Safari, Edge)
-- **Network Speed:** Variable (should load efficiently on standard connections)
-- **Accessibility:** Content should be readable and navigable for diverse users
+- **Primary Platform:** Desktop computers (1024×768 resolution or higher)
+- **Secondary Platform:** Tablets and mobile devices
+- **Technical Capability:** Medium to high (tech-savvy academic and professional audience)
+- **Browser Compatibility:** Modern browsers — Chrome, Firefox, Safari, Edge
+- **Accessibility:** Content readable and navigable for diverse users
 
 ---
 
-## 3. SITE LAYOUT - FLOWCHART
+## 3. SITE LAYOUT (FLOWCHART)
 
-### Navigation Architecture
+### Site Architecture Overview
+
+The website follows a flat navigation structure where every page links to every other page. The home page (index.html) serves as the primary entry point.
 
 ```
-                          ┌─────────────────┐
-                          │  HOME (index)   │
-                          │  Page 1: Cover  │
-                          │  + Collage      │
-                          └────────┬────────┘
-                                   │
-                    ┌──────────────┼──────────────┐
-                    │              │              │
-         ┌──────────▼──────────┐   │   ┌──────────▼──────────┐
-         │  EXPERIENCE.html    │   │   │  EDUCATION.html     │
-         │  Page 2: Roles      │   │   │  Page 3: Background │
-         │  + Computer Photo   │   │   │  + Audio Intro      │
-         └─────────────────────┘   │   └─────────────────────┘
-                    │              │              │
-                    └──────────────┼──────────────┘
-                                   │
-         ┌─────────────────────────┼─────────────────────────┐
-         │                         │                         │
-    ┌────▼────────────────┐   ┌────▼────────────────┐   
-    │  COURSES.html       │   │  REFERENCES.html    │   
-    │  Page 4: Courses    │   │  Page 5: Links      │   
-    │  + Flash Animation  │   │  + APA References   │   
-    └─────────────────────┘   └─────────────────────┘   
+                          ┌─────────────────────┐
+                          │   HOME (index.html)  │
+                          │   Page 1: Collage +  │
+                          │   Personal Info      │
+                          └──────────┬───────────┘
+                                     │
+              ┌──────────────────────┼──────────────────────┐
+              │                      │                      │
+   ┌──────────▼──────────┐  ┌───────▼────────┐  ┌──────────▼──────────┐
+   │  experience.html    │  │ education.html │  │   courses.html      │
+   │  Page 2: Roles &   │  │ Page 3: Edu    │  │   Page 4: Courses   │
+   │  Experience         │  │ Background +   │  │   + Animation       │
+   │                     │  │ Audio Intro    │  │                     │
+   └─────────────────────┘  └────────────────┘  └─────────────────────┘
+              │                      │                      │
+              └──────────────────────┼──────────────────────┘
+                                     │
+                          ┌──────────▼──────────┐
+                          │  references.html    │
+                          │  Page 5: All        │
+                          │  References (APA)   │
+                          └─────────────────────┘
 
-Key Features:
-✓ All pages interconnected via navigation menu
-✓ Users can navigate to any page from any page
-✓ Hierarchical structure with Home as entry point
-✓ Consistent navigation system across all pages
+  ✓ All 5 pages interconnected via navigation bar
+  ✓ Users can navigate to any page from any page
+  ✓ Home page is the primary entry point
+  ✓ Consistent navigation across all pages
 ```
 
-### Detailed Page Layout
+### Standard Page Layout Template
 
-**Page 1 - HOME (index.html)**
-```
-┌─────────────────────────────────────┐
-│    WELCOME (Page Title)             │
-├─────────────────────────────────────┤
-│ HOME | EXPERIENCE | EDUCATION | ... │ ← Navigation
-├─────────────────────────────────────┤
-│         Page Heading                │
-├─────────────────────────────────────┤
-│     COLLAGE OF ALL IMAGES           │ ← 4 images arranged
-│  (Grid layout, 2x2 or responsive)   │
-├─────────────────────────────────────┤
-│  Group Member Information (1-5)     │ ← Profile cards
-│  - Names, IDs, Dates, Contact Info  │
-├─────────────────────────────────────┤
-│         © 2026 | Footer              │
-└─────────────────────────────────────┘
-```
+Every page follows this consistent structure:
 
-**Pages 2-5 - Standard Layout**
 ```
-┌─────────────────────────────────────┐
-│    PAGE TITLE (Experience/Education/...)
-├─────────────────────────────────────┤
-│ HOME | EXPERIENCE | EDUCATION | ... │ ← Consistent Navigation
-├─────────────────────────────────────┤
-│         Page Heading                │
-├─────────────────────────────────────┤
-│                                     │
-│  Page-Specific Content              │
-│  (Images, Tables, Audio, etc.)      │
-│                                     │
-├─────────────────────────────────────┤
-│         © 2026 | Footer              │
-└─────────────────────────────────────┘
+┌─────────────────────────────────────────┐
+│         PAGE TITLE (h1, uppercase)      │  ← Gradient header bar
+├─────────────────────────────────────────┤
+│ Home | Experience | Education |         │
+│ Courses | References                    │  ← Horizontal navigation
+├─────────────────────────────────────────┤
+│         PAGE HEADING (h2)               │  ← Section title with underline
+├─────────────────────────────────────────┤
+│                                         │
+│    Page-Specific Content                │  ← Content area (white bg)
+│    (Images, Tables, Audio, etc.)        │
+│                                         │
+├─────────────────────────────────────────┤
+│  © 2026 Group Members: [Names] |        │
+│  Bachelor of Informatics                │  ← Footer (dark blue bg)
+└─────────────────────────────────────────┘
 ```
 
 ---
@@ -159,138 +159,92 @@ Key Features:
 
 ### Navigation Structure
 
-**Implementation Approach:**
-- Horizontal navigation bar positioned at the top of each page
-- Below the main page title
-- Above the main content area
-- Persistent across all pages for consistency
+**Implementation:**
+- Horizontal navigation bar at the top of each page, below the page title
+- 5 navigation links: **Home | Experience | Education | Courses | References**
+- Persistent and identical across all 5 pages
+- Current page link highlighted with coral red (#ff6b6b) background — active state has no working link (pointer-events disabled)
+- All other links functional and navigable
+- Hover effects provide visual feedback (background changes to #2a7a9e)
+- Responsive: navigation stacks vertically on screens ≤768px
 
-**Navigation Elements:**
-- 5 navigation links: Home, Experience, Education, Courses, References
-- Current page highlighted with active state (coral red background)
-- Links styled as buttons for clear affordance
-- Responsive design: stacks vertically on mobile devices
+**Navigation Behaviour per Page:**
 
-**Navigation Behavior:**
-- All links functional and working
-- Current page link is disabled/inactive
-- Hover effects provide visual feedback
-- Mobile-friendly: collapses to vertical menu on small screens
+| Page | Active (Non-Linked) | Other Links |
+|------|---------------------|-------------|
+| index.html | Home | Experience, Education, Courses, References |
+| experience.html | Experience | Home, Education, Courses, References |
+| education.html | Education | Home, Experience, Courses, References |
+| courses.html | Courses | Home, Experience, Education, References |
+| references.html | References | Home, Experience, Education, Courses |
 
-### Why is a Consistent Navigation Scheme Very Important?
+### Why Is a Consistent Navigation Scheme Very Important?
 
-A consistent navigation scheme is critical to web design and user experience for several essential reasons:
+A consistent navigation scheme is critical for several reasons:
 
-**1. User Familiarity & Predictability**
+**1. User Familiarity & Reduced Cognitive Load**  
+When navigation appears in the same location and behaves identically across all pages, users only need to learn it once. This predictability reduces cognitive load and allows users to focus on content rather than searching for how to move between pages.
 
-Users expect navigation to be in the same location and function the same way across all pages. Consistency reduces cognitive load and makes the website feel professional and trustworthy. When navigation is predictable, users can focus on content rather than searching for how to navigate.
+**2. Professional Credibility**  
+Consistent navigation signals careful planning and professional design. It demonstrates that the website was constructed with attention to detail and adherence to established web standards.
 
-*Nielsen, J. (2012). "10 Usability Heuristics for User Interface Design." Nielsen Norman Group. Accessed from: https://www.nngroup.com/articles/ten-usability-heuristics/*
+**3. Accessibility & Usability**  
+Consistent navigation patterns are easier for assistive technologies (such as screen readers) to interpret, improving accessibility. Users with disabilities benefit from predictable interface patterns.
 
-**2. Reduced Learning Curve**
+**4. Reduced Errors & Frustration**  
+When users can predict how navigation works, they make fewer errors and experience less frustration. This leads to longer engagement and a more positive user experience.
 
-A consistent navigation system means users only need to learn it once. They immediately understand how to move through the site on subsequent pages, creating a seamless user experience and reducing frustration or confusion.
-
-**3. Professional Appearance**
-
-Consistent navigation demonstrates attention to detail and professional design practices. It indicates that the website was carefully planned and constructed according to established web standards, enhancing credibility.
-
-**4. SEO & Accessibility Benefits**
-
-Search engines recognize consistent site architecture and navigation patterns, which can improve search rankings. Additionally, consistent navigation patterns are easier for assistive technologies (screen readers) to interpret, improving accessibility for users with disabilities.
-
-**5. Conversion & User Goals**
-
-Users who understand how to navigate a website are more likely to explore it thoroughly, find what they're looking for, and accomplish their goals (whether viewing a portfolio, learning about skills, or contacting the team).
-
-**6. Mobile Compatibility**
-
-Consistent navigation patterns that adapt responsively to different screen sizes ensure the website functions well across all devices, which is essential given the diversity of user access methods.
+**Reference:**  
+Nielsen, J. (2012). *10 usability heuristics for user interface design.* Nielsen Norman Group. Retrieved from https://www.nngroup.com/articles/ten-usability-heuristics/
 
 ---
 
-## 5. VISUAL ELEMENTS/STYLE - "LOOK" OF PAGES
+## 5. VISUAL ELEMENTS/STYLE
 
-### Color Scheme
+This section describes the "look" of the pages without the content. All styles are saved in a single Cascading Style Sheet: **MyLook-1.css**.
 
-**Background Colors:**
-- **Primary Background:** #e8f0f7 (Soft Blue-Grey)
-  - **Why:** Creates a professional, calm environment; reduces eye strain; commonly used in corporate web design; suggests trustworthiness and stability
+### Colour Scheme
 
-- **Secondary Background:** #f5f8fb (Lighter Blue-Grey)
-  - **Why:** Subtle variation provides visual hierarchy without overwhelming the content area
+| Element | Colour | Hex Code | Rationale |
+|---------|--------|----------|-----------|
+| Page Background | Soft Blue-Grey | #e8f0f7 | Creates a professional, calm environment; reduces eye strain; not white (as required) |
+| Content Container | Lighter Blue-Grey | #f5f8fb | Subtle variation provides visual hierarchy |
+| Content Sections | White | #ffffff | High contrast for readability |
+| Navigation Bar & Footer | Dark Blue | #1a5f7a | Conveys professionalism, trust, and technical competence |
+| Headings & Borders | Medium Blue | #2a7a9e | Creates visual hierarchy; guides attention to headings |
+| Active Navigation | Coral Red | #ff6b6b | Creates visual contrast for current page; draws attention |
+| Body Text | Dark Grey | #333333 | Excellent readability; softer than pure black |
+| Links | Standard Blue | #0066cc | Familiar web convention for clickable links |
 
-- **Content Container:** #ffffff (White)
-  - **Why:** Ensures high contrast for readability while maintaining the cool color scheme through surrounding elements
-
-**Accent Colors:**
-- **Primary Color:** #1a5f7a (Dark Blue)
-  - **Why:** Conveys professionalism, trust, and technical competence; used for footer, primary navigation background
-
-- **Secondary Accent:** #2a7a9e (Medium Blue)
-  - **Why:** Creates visual hierarchy; guides user attention to important elements like headings and borders; provides continuity with primary color
-
-- **Highlight Color:** #ff6b6b (Coral Red)
-  - **Why:** Creates visual contrast for active navigation states; draws attention to the current page without clashing with the overall color scheme; energetic yet professional
-
-- **Text Color:** #333333 (Dark Grey)
-  - **Why:** Excellent contrast for readability; softer than pure black to reduce eye strain while maintaining legibility
+**Why this colour scheme?**  
+The cool blue tones convey professionalism and trustworthiness — appealing to the technology and academic audience. The warm coral accent creates energy and draws attention to key interactive elements without clashing. The soft blue-grey background satisfies the requirement that background cannot be white, while maintaining a clean and modern appearance.
 
 ### Typography
 
-**Font Family:** Arial, Helvetica, sans-serif
-- **Why:** Highly legible on web across all devices; professional appearance; universal compatibility across browsers and operating systems; no additional downloads required
+| Element | Font | Size | Weight | Purpose |
+|---------|------|------|--------|---------|
+| All Text | Arial, Helvetica, sans-serif | — | — | Universal compatibility, high legibility |
+| Page Title (h1) | Arial | 2.5rem (40px) | Bold, Uppercase | Dominant page identifier |
+| Page Heading (h2) | Arial | 1.8rem (28px) | 600 (Semi-Bold) | Section title with underline |
+| Subsection (h3) | Arial | 1.3rem (22px) | Normal | Content subsections |
+| Body Text (p) | Arial | 1rem (16px) | Normal | Primary reading text |
+| Captions/Small | Arial | 0.9rem (14px) | Italic | Image captions, secondary info |
+| Student ID Watermark | Arial | 8px | Normal | Required watermark on all images |
 
-**Font Sizes & Hierarchy:**
-- **Page Title:** 2.5rem (uppercase, bold, 40px equivalent)
-  - **Purpose:** Immediately identifies the page; dominant visual element
-  
-- **Page Heading (Section Title):** 1.8rem (bold, 28px equivalent)
-  - **Purpose:** Clearly delineates major sections; maintains visual structure
-  
-- **Subsection Heading (h3):** 1.3rem (22px equivalent)
-  - **Purpose:** Identifies content subsections; maintains hierarchy
-  
-- **Body Text:** 1rem (16px equivalent)
-  - **Purpose:** Primary reading text; comfortable size for extended reading; accessible size for vision-impaired users
-  
-- **Small Text/Captions:** 0.9rem (14px equivalent)
-  - **Purpose:** Image captions, footer text; secondary information
+**Line Spacing:** 1.6 (general), 1.8 (body paragraphs)
 
-**Line Spacing:** 1.6 (default), 1.8 for body text
-- **Why:** Generous line spacing improves readability; reduces eye fatigue; creates professional appearance
+**Why this typography?**  
+Sans-serif fonts provide superior on-screen readability. Arial is universally available across all browsers and operating systems without additional downloads. The clear size hierarchy guides users through content naturally. The generous line spacing improves readability and creates a professional appearance.
 
 ### Layout Approach
 
-**Design Methodology:**
-- CSS-based layer positioning (no frames - as required)
-- Grid system for responsive layouts
-- Flexbox for navigation and flexible component arrangement
-- Mobile-first responsive design approach
-
-**Key Design Principles Applied:**
-- **Grid-Based Layout:** Ensures alignment and visual balance
-- **Whitespace:** Adequate padding and margins prevent cluttered appearance
-- **Responsive Columns:** Content adapts from single column (mobile) to multi-column (desktop)
-- **Visual Hierarchy:** Size, color, and positioning guide user attention
-- **Consistency:** Repeated patterns create familiar, predictable interface
-
-### Design Decisions Rationale
-
-**Why This Color Scheme?**
-- The cool blue tones (professional, trustworthy) paired with warm accent (energy, attention) creates balance
-- Accessible color combinations that work for color-blind users
-- Appeals to technology sector professionals who value clean, modern design
-
-**Why This Typography?**
-- Sans-serif fonts are web-standard for body text (superior readability on screens)
-- Clear visual hierarchy through size variation guides users through content
-- Generous sizing ensures accessibility for users with vision challenges
-
-**Why This Layout?**
-- Responsive design ensures functionality across all devices (requirement compliance)
-- CSS layers provide modern, valid HTML structure
-- Grid-based approach creates professional, organized appearance
+- **CSS layers** for content positioning (no frames, as required by the assignment brief)
+- **CSS Grid** for the collage layout (responsive 2×2 grid on desktop, single column on mobile)
+- **Flexbox** for navigation, profile items, and flexible component arrangement
+- **Box-shadow** effects (0 4px 12px rgba(0,0,0,0.08)) for subtle depth
+- **Border-radius** (5px) for softer corners on containers and images
+- **Hover transitions** (0.3s ease) for interactive feedback on navigation, cards, and collage items
+- **Responsive breakpoints:** 768px (tablet), 480px (mobile), 320px (extra small)
 
 ---
 
@@ -298,72 +252,63 @@ Consistent navigation patterns that adapt responsively to different screen sizes
 
 ### Page 1: HOME (index.html)
 
-**Primary Content Elements:**
-- **Collage:** A grid display of 4 representative images from throughout the project
-  - Demonstrates visual design capability
-  - Provides preview of multimedia content
-  - Arranged in responsive 2x2 grid (adjusts on smaller screens)
-
-- **Group Member Information:** Structured profile cards for 2-5 group members containing:
-  - Full names
-  - Student ID numbers
-  - Dates of birth
-  - Contact phone numbers
-  - Email addresses
-  - Languages spoken
-
-**Purpose:** Introduces the team, establishes professional presence, displays multimedia competency
+- **Collage:** A responsive grid of 5 images (one per group member), displayed using HTML5 Canvas elements. Each canvas draws the member's seated photograph with their student ID watermarked in Arial size 8. The collage is arranged in a 2-column grid (max-width 600px, centered). Inside the collage area, the group members' names and programme name (Bachelor of Informatics) are displayed.
+- **Personal Information:** 5 profile cards, each containing: full name, student ID, date of birth, contact number, email address, and languages spoken.
+- **Programme Info:** "Bachelor of Informatics" and "Informatics" course designation.
+- **Footer:** © 2026 with all five group member names, programme, and project title.
+- **Title:** "Welcome" (h1) | **Heading:** "Portfolio & Project Overview" (h2)
 
 ### Page 2: EXPERIENCE (experience.html)
 
-**Primary Content Elements:**
-- **Professional Photos:** Images of group members in front of computers
-- **Role Information:** Each member's ideal multimedia development role
-- **Role Justification:** Brief explanation of career interests and strengths
-- **Role-Related Images:** Visual representation of chosen roles
-- **Community Activities:** List of involvement in campus/community activities
-
-**Purpose:** Demonstrates work experience, career aspirations, and professional development
+For each of the 5 group members:
+- **Photograph** of the member at a computer (seated photos)
+- **Project Role** and multimedia development experience summary
+- **Ideal Multimedia Role** with justification:
+  - Senia Shipepe → Content Writer
+  - Phrancina Ndjambula → Designer
+  - Faith Hamutenya → IT Technician / Data Analyst
+  - Andris Kaishungu → Web Developer
+  - Alvine Murangi → Editor
+- **Role-related image** (stock photo representing the role)
+- **Activities & Community Involvement** list
+- **Title:** "Experience" (h1) | **Heading:** "Multimedia Development Experience" (h2)
 
 ### Page 3: EDUCATION (education.html)
 
-**Primary Content Elements:**
-- **Audio Introduction:** 30-second sound file introducing the group and explaining motivation for Bachelor of Informatics
-- **Educational Background Photos:** Different image from Page 2 (different group photo)
-- **Education History:** For each member:
-  - Primary school information
-  - Secondary school information
-  - Current programme details
-  - Expected graduation date
-  - Motivation/reasoning for programme choice
-
-**Purpose:** Provides educational context, establishes credibility, personal connection through audio
+- **Audio Introduction:** A 30-second OGG sound file (Education Background Audio.ogg) introducing the group and explaining why we are pursuing the Bachelor of Informatics. Presented via a custom-styled audio player with play/pause, progress bar, and volume controls. The audio is introduced with: *"Listen to our 30-second introduction explaining our educational background and why we chose to pursue the Bachelor of Informatics programme."*
+- **Educational Background** for each of 5 members:
+  - Secondary school name, location, and year completed
+  - Tertiary institution (NUST for all)
+  - Current programme, start year, and expected graduation
+  - Personal motivation for choosing Bachelor of Informatics
+- **Title:** "Education" (h1) | **Heading:** "Educational Background" (h2)
 
 ### Page 4: COURSES (courses.html)
 
-**Primary Content Elements:**
-- **Course List:** Table displaying all third-year courses with:
-  - Course code
-  - Course name
-  - Lecturer name
-  
-- **Flash Animation:** Animated display of all project images (excluding banner):
-  - All images resized to smallest image dimensions
-  - Smooth transitions/animations
-  - Professional presentation
+- **Third-Year Course Table** with 6 courses:
 
-**Purpose:** Demonstrates course knowledge, provides technical skill evidence (animation creation)
+| Code | Course Name | Lecturer |
+|------|-------------|----------|
+| AAI711S | Advanced Applications of Informatics | Mrs Amunkete |
+| BIA711S | Business Intelligence and Analytics | Dr Kwenda |
+| ERP720S | Enterprise Resource Planning Systems | Mr Billawer |
+| ISG711S | Information Systems Strategy and Governance | Dr Kwenda |
+| MMA710S | Multimedia Applications | Mr Akinsola |
+| WPM711S | Web Programming | Mr Mbaeva |
+
+- **Animation:** A CSS/JavaScript-based image slideshow of all 15 project images (excluding any banner). The animation uses a two-column layout — left column slides images upward, right column slides images downward — cycling every 3 seconds with a 1.5-second offset between columns. Images are displayed at uniform dimensions using background-size: contain.
+- **Title:** "Courses" (h1) | **Heading:** "Third Year Courses – Bachelor of Informatics" (h2)
 
 ### Page 5: REFERENCES (references.html)
 
-**Primary Content Elements:**
-- **Career References:** URLs and sources used for career research
-- **Image/Media Attribution:** Credits for all images and multimedia assets used
-- **Software References:** Official homepages of software used (Dreamweaver, Adobe products, audio/animation tools)
-- **Design Reference:** Links to web design resources and tutorials
-- **All references in APA format with working hyperlinks**
-
-**Purpose:** Academic integrity (proper attribution), demonstrates research capability
+- **Career & Professional Development References** — MMA710S lecture notes and course materials
+- **Image & Media Resources** — Pexels (https://www.pexels.com/) for stock photos used as role images
+- **Software & Development Tools** — with links to official homepages:
+  - Visual Studio Code: https://code.visualstudio.com/
+- **Web Development & Design Resources** — W3Schools HTML references, GitHub Education resources
+- **Project Repository** — GitHub: https://github.com/Kash-Jr/mma-web/tree/main
+- All references in APA format with working hyperlinks
+- **Title:** "References" (h1) | **Heading:** "Project References" (h2)
 
 ---
 
@@ -371,188 +316,162 @@ Consistent navigation patterns that adapt responsively to different screen sizes
 
 ### Image Assets
 
-**Format:** JPEG or PNG (web-optimized)
-**Resolution:** Minimum 800x600 pixels; maximum 1920x1080 pixels
-**File Size:** Under 500KB per image (for optimal loading)
-**Metadata:** Each image includes student ID watermark (Arial, size 8)
+**Format:** JPEG and JPG (web-optimised)  
+**Student ID Watermark:** All images contain the respective student ID number — font: Arial, size: 8 (as required)
 
-**Required Images:**
-1. **Collage Images (4):** Diverse portfolio samples
-2. **Experience Photos (2+):** Group members at computer
-3. **Experience Role Images (2+):** Role-related visuals
-4. **Education Photo:** Different group photo
-5. **Additional:** Supporting images for content enhancement
+**Image Inventory (15 files total):**
 
-**Total Estimated:** 8-12 images, approximately 3-5 MB combined
+| # | Filename | Type | Approx. Size | Used On |
+|---|----------|------|-------------|---------|
+| 1 | Senia seated.jpeg | Member photo at computer | 49 KB | Pages 1, 2, 4 |
+| 2 | Senia standing.jpeg | Member standing photo | 45 KB | Page 4 (animation) |
+| 3 | Phrancina seated.jpeg | Member photo at computer | 198 KB | Pages 1, 2, 4 |
+| 4 | Phrancina standing.jpeg | Member standing photo | 215 KB | Page 4 (animation) |
+| 5 | Faith seated.jpeg | Member photo at computer | 54 KB | Pages 1, 2, 4 |
+| 6 | Faith standing.jpeg | Member standing photo | 56 KB | Page 4 (animation) |
+| 7 | Andris seated.jpeg | Member photo at computer | 89 KB | Pages 1, 2, 4 |
+| 8 | Andris standing.jpeg | Member standing photo | 50 KB | Page 4 (animation) |
+| 9 | Alvine seated.jpeg | Member photo at computer | 50 KB | Pages 1, 2, 4 |
+| 10 | Alvine standing.jpeg | Member standing photo | 58 KB | Page 4 (animation) |
+| 11 | Content Writer Image.jpg | Role image (Senia) | 677 KB | Page 2 |
+| 12 | Designer Image.jpg | Role image (Phrancina) | 814 KB | Page 2 |
+| 13 | IT Technician-Data Analyst Image.jpg | Role image (Faith) | 769 KB | Page 2 |
+| 14 | Web Developer Image.jpg | Role image (Andris) | 1,534 KB | Page 2 |
+| 15 | Editor Image.jpg | Role image (Alvine) | 1,858 KB | Page 2 |
+
+**Total Image Size:** Approximately 5.5 MB  
+**Note:** The standing photos are used on the Education page (Page 3) as the different group photos required by the brief (distinct from the seated photos on Page 2).
 
 ### Audio Content
 
-**Format:** MP3 (lossy compression for web)
-**Duration:** 30 seconds (±2 seconds acceptable)
-**Bitrate:** 128 kbps or higher (quality/file-size balance)
-**Sample Rate:** 44.1 kHz standard
-**File Size:** Approximately 300-500 KB
-**Content:** Introduction to group and Bachelor of Informatics programme
+| Property | Specification |
+|----------|--------------|
+| **Filename** | Education Background Audio.ogg |
+| **Format** | OGG (Ogg Vorbis) |
+| **Duration** | ~30 seconds |
+| **File Size** | 80 KB |
+| **Sample Rate** | 44.1 kHz (standard) |
+| **Content** | Group introduction and explanation of why we are pursuing the Bachelor of Informatics |
+| **Location** | Page 3 (education.html) |
+| **Presentation** | Custom-styled audio player with play/pause, seek bar, time display, and volume control |
+| **Linked Image** | Standing photos of group members (different from Page 2 seated photos) |
 
-**Technical Requirements:**
-- Clear audio (no background noise)
-- Professional narration/speech
-- Properly encoded for web playback
+### Animation
 
-### Flash Animation
+| Property | Specification |
+|----------|--------------|
+| **Type** | CSS/JavaScript image slideshow (replaces Flash due to Flash deprecation) |
+| **Images Included** | All 15 project images (no banner used) |
+| **Images Excluded** | No banner images are used in this project |
+| **Sizing** | All images displayed at uniform dimensions using CSS background-size: contain |
+| **Transition Style** | Two-column layout: left slides up, right slides down |
+| **Cycle Duration** | 3 seconds per image, 1.5s offset between columns |
+| **Duration** | Continuous loop |
+| **Sound** | No sound file inside the animation (as required) |
+| **Location** | Page 4 (courses.html) |
 
-**Format:** SWF (Shockwave Flash)
-**Duration:** 20-60 seconds (continuous loop recommended)
-**Resolution:** 800x600 pixels or 1024x768 pixels
-**File Size:** Under 2 MB (web-optimized)
-
-**Content Specifications:**
-- Animated sequence of all project images
-- Images resized to match smallest image dimensions
-- Smooth transitions (fade, slide, or zoom effects)
-- Professional timing and pacing
-- Does NOT include sound file
-- Does NOT include banner images
-
-**Estimated File Sizes Summary:**
-- Images: 3-5 MB (total)
-- Audio: 0.3-0.5 MB
-- Flash Animation: 0.5-2 MB
-- **Total Multimedia:** 4-8 MB
+**Total Multimedia File Sizes:**
+- Images: ~5.5 MB
+- Audio: ~80 KB
+- Animation: Built with CSS/JS (no separate file)
+- **Total:** ~5.6 MB
 
 ---
 
-## 8. TESTING PLAN
+## 8. TESTING
 
-### Testing Approach
+### Differences Between Technical and Design Testing
 
-**Technical vs. Design Testing**
+**Technical Testing** verifies that all functional components work correctly:
+- Do all 5 navigation links on every page point to the correct target page?
+- Do all 15 images load and display without broken references?
+- Does the audio file (OGG) play correctly across browsers?
+- Does the CSS animation cycle through images without errors?
+- Is the CSS stylesheet (MyLook-1.css) loaded successfully on all pages?
+- Are there any console errors (checked via browser Developer Tools, F12)?
+- Does the website function correctly after being zipped and extracted?
 
-**Technical Testing** focuses on functionality and compatibility:
-- Are all links working and directing to correct pages?
-- Do all multimedia files load properly?
-- Does navigation function across all pages?
-- Is the website compatible with different browsers?
-- Are there any console errors or broken references?
-- Does the responsive design work on mobile devices?
+**Design Testing** evaluates the user experience and visual quality:
+- Is the visual design consistent across all 5 pages?
+- Is the navigation intuitive — can users easily find their way?
+- Is the colour scheme appealing, professional, and accessible?
+- Is the typography readable with clear hierarchy?
+- Is the layout balanced and well-organised?
+- Does the collage on Page 1 look professional and blended?
+- Is the audio introduction clear and well-presented?
 
-**Design Testing** focuses on user experience and visual consistency:
-- Is the visual design consistent across all pages?
-- Is the navigation intuitive and easy to use?
-- Is the color scheme appealing and professional?
-- Is the typography readable and well-hierarchized?
-- Is the layout balanced and organized?
-- Is the design accessible to users with disabilities?
+**Reference:**  
+Barnum, C. M. (2020). *Usability testing essentials: Ready, set...test!* (2nd ed.). Morgan Kaufmann. Retrieved from https://www.sciencedirect.com/book/9780128169421/usability-testing-essentials
 
-*Nielsen, J. (2012). "Usability Testing Essentials." Nielsen Norman Group. Accessed from: https://www.nngroup.com/reports/usability-testing-essentials/*
+### Why Is There a Need for Testing?
 
-### Why Testing is Necessary
+Testing is essential because:
 
-**Quality Assurance:** Testing ensures the website functions as intended and meets all assignment requirements
+1. **Quality Assurance:** Ensures the website functions as intended and meets all assignment specifications before submission.
+2. **Error Detection:** Identifies broken links, missing files, layout issues, and browser incompatibilities that would cost marks.
+3. **User Experience:** Confirms that the website is intuitive, readable, and accessible to the target audience.
+4. **Professional Standards:** Industry practice requires testing before any product is deployed or delivered. This habit reflects real-world web development.
+5. **Compliance Verification:** Confirms strict adherence to the assignment brief — all required elements present and correctly implemented.
 
-**User Experience:** Identifies issues that could frustrate users or make content inaccessible
-
-**Professional Standards:** Industry practice requires testing before deployment or submission
-
-**Compliance Verification:** Confirms adherence to assignment brief specifications
-
-**Error Detection:** Catches technical issues (broken links, missing files) before submission
-
-### Testing Methodology
+### Testing Plan
 
 **Phase 1: Technical Testing**
-1. **Link Verification:** Click all navigation links to verify they go to correct pages
-2. **File Path Testing:** Ensure all CSS, images, audio, and Flash files load correctly
-3. **Browser Compatibility:** Test in Chrome, Firefox, Safari, and Edge
-4. **Responsive Testing:** Use browser developer tools to test mobile (320px), tablet (768px), desktop (1024px+)
-5. **Error Checking:** Open browser console (F12) to check for JavaScript/resource errors
+1. Click all navigation links on every page to verify correct targets
+2. Verify all 15 images load on their respective pages
+3. Confirm audio playback on Page 3 across Chrome, Firefox, and Edge
+4. Test animation on Page 4 — verify all images cycle smoothly
+5. Open browser console (F12) to check for resource errors on every page
+6. Test responsive layout at 1024px, 768px, 480px, and 320px widths
 
 **Phase 2: Design Testing**
-1. **Visual Consistency:** Verify colors, fonts, spacing are consistent across pages
-2. **Readability Testing:** Check text contrast and font sizes for legibility
-3. **Navigation UX:** Verify active states are clear, navigation is intuitive
-4. **Image Quality:** Ensure all images display crisply without distortion
-5. **Audio Playback:** Test audio player across different browsers
-6. **Animation Performance:** Verify Flash animation plays smoothly without stuttering
+1. Verify consistent colours, fonts, and spacing across all 5 pages
+2. Check text contrast and font sizes for readability
+3. Verify active navigation states are visually clear
+4. Confirm images display without distortion
+5. Evaluate collage balance and visual appeal
+6. Assess overall page balance and whitespace usage
 
-**Phase 3: Accessibility Testing**
-1. **Keyboard Navigation:** Ensure all elements accessible via keyboard
-2. **Color Contrast:** Verify sufficient contrast for color-blind users
-3. **Text Alternatives:** Ensure images have proper alt text
-4. **Responsive Scaling:** Test zoom functionality at 150%, 200%
-
-**Testing Environment:**
-- Local file system (before zipping)
-- After extraction from zip file (final verification)
-- Multiple browsers and devices
+**Phase 3: Submission Testing**
+1. Zip the entire project folder
+2. Extract the zip to a new location
+3. Open index.html and verify all links, images, audio, and animation still work
+4. Test in at least two different browsers
 
 ---
 
 ## 9. REFERENCES
 
-### Academic & Design Resources
-
-Nielsen, J. (2012). *10 usability heuristics for user interface design.* Retrieved from Nielsen Norman Group: https://www.nngroup.com/articles/ten-usability-heuristics/
-
-Nielsen, J. (2012). *Usability testing essentials: Ready to recruit and reward test participants.* Nielsen Norman Group.
-
-W3C (World Wide Web Consortium). (2023). *Web Content Accessibility Guidelines (WCAG) 2.1.* Retrieved from https://www.w3.org/WAI/WCAG21/quickref/
+Barnum, C. M. (2020). *Usability testing essentials: Ready, set...test!* (2nd ed.). Morgan Kaufmann. https://www.sciencedirect.com/book/9780128169421/usability-testing-essentials
 
 Garrett, J. J. (2010). *The elements of user experience: User-centered design for the web and beyond.* New Riders Press.
 
-### Web Technologies & Standards
+Mozilla Developer Network. (2024). *CSS: Cascading Style Sheets.* https://developer.mozilla.org/en-US/docs/Web/CSS
 
-Mozilla Developer Network (2024). *HTML: HyperText Markup Language.* Retrieved from https://developer.mozilla.org/en-US/docs/Web/HTML
+Mozilla Developer Network. (2024). *HTML: HyperText Markup Language.* https://developer.mozilla.org/en-US/docs/Web/HTML
 
-Mozilla Developer Network (2024). *CSS: Cascading Style Sheets.* Retrieved from https://developer.mozilla.org/en-US/docs/Web/CSS
+Nielsen, J. (2012). *10 usability heuristics for user interface design.* Nielsen Norman Group. https://www.nngroup.com/articles/ten-usability-heuristics/
 
-W3C (2023). *HTML Living Standard.* Retrieved from https://html.spec.whatwg.org/
+Pexels. (2024). *Free stock photos.* https://www.pexels.com/
 
-### Design & Color Theory
+Visual Studio Code. (2024). *Code editor — official homepage.* https://code.visualstudio.com/
 
-Adobe. (2023). *Understanding color on the web.* Retrieved from https://www.adobe.com/products/color/fundamentals
+W3C (World Wide Web Consortium). (2023). *Web Content Accessibility Guidelines (WCAG) 2.1.* https://www.w3.org/WAI/WCAG21/quickref/
 
-Smashing Magazine (2023). *Web design principles.* Retrieved from https://www.smashingmagazine.com/
-
-### Tools & Software
-
-Adobe Dreamweaver. (2024). *Official homepage.* Retrieved from https://www.adobe.com/products/dreamweaver
-
-Adobe Flash Professional. (2024). *Official homepage.* Retrieved from https://www.adobe.com/products/flash
-
-Audacity (2024). *Free audio editor and recorder.* Retrieved from https://www.audacityteam.org/
-
-Visual Studio Code. (2024). *Code editor.* Retrieved from https://code.visualstudio.com/
+W3Schools. (2024). *HTML forms and attributes.* https://www.w3schools.com/html/html_forms_attributes.asp
 
 ---
 
-## SUBMISSION NOTES
+## DOCUMENT STATUS
 
-**Document Status:** ✅ Ready for Submission
-
-**To Convert to PDF/Word:**
-1. Open this file in your markdown editor
-2. Export/Save as PDF (recommended) or
-3. Copy content to Word document and format
-
-**Before Submission:**
-- Fill in all [To be filled in] placeholders with actual project details
-- Ensure all references include working URLs
-- Verify all sections are complete and coherent
-- Review for spelling and grammar errors
-- Have teammates review for accuracy
-
-**Assignment Compliance:**
-✅ Covers all required sections of Part A  
-✅ Includes flowchart/site layout  
-✅ Explains navigation scheme with references  
-✅ Details visual design choices with rationale  
-✅ Specifies multimedia content types and sizes  
-✅ Includes testing plan with references  
-✅ References in APA format  
+**Status:** ✅ Document Ready for Submission  
+**Prepared:** May 2026  
+**Course:** MMA710S Multimedia Applications  
+**Programme:** Bachelor of Informatics, NUST  
+**CSS Filename:** MyLook-1.css  
+**Home Page Filename:** index.html
 
 ---
 
-*Document prepared: May 7, 2026*  
-*MMA Web Project - Part A Design Specifications*  
-*Bachelor of Informatics Programme*
+*MMA710S Multimedia Applications — Project Part A: Website Design Specifications*  
+*Bachelor of Informatics Programme — Namibia University of Science and Technology*  
+*© 2026 Senia Shipepe, Phrancina Sunday Ndjambula, Faith Miriam Hamutenya, Andris Junior Etuna Kaishungu, Alvine Murangi*
