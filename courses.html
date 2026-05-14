@@ -82,79 +82,186 @@
                 <p class="animation-intro" style="text-align: center; font-style: italic; color: #666; margin-bottom: 10px;">
                     Animation includes: All multimedia images used in this project displayed one by one at random
                 </p>
-                <div class="animation-container" id="animation-slideshow" style="position: relative; overflow: hidden; min-height: 400px;">
-                    <img src="images/Alvine seated.jpeg" class="slideshow-img" alt="Alvine seated">
-                    <img src="images/Alvine standing.jpeg" class="slideshow-img" alt="Alvine standing">
-                    <img src="images/Andris seated.jpeg" class="slideshow-img" alt="Andris seated">
-                    <img src="images/Andris standing.jpeg" class="slideshow-img" alt="Andris standing">
-                    <img src="images/Content Writer Image.jpg" class="slideshow-img" alt="Content Writer">
-                    <img src="images/Designer Image.jpg" class="slideshow-img" alt="Designer">
-                    <img src="images/Editor Image.jpg" class="slideshow-img" alt="Editor">
-                    <img src="images/Faith seated.jpeg" class="slideshow-img" alt="Faith seated">
-                    <img src="images/Faith standing.jpeg" class="slideshow-img" alt="Faith standing">
-                    <img src="images/IT Technician-Data Analyst Image.jpg" class="slideshow-img" alt="IT Technician Data Analyst">
-                    <img src="images/Phrancina seated.jpeg" class="slideshow-img" alt="Phrancina seated">
-                    <img src="images/Phrancina standing.jpeg" class="slideshow-img" alt="Phrancina standing">
-                    <img src="images/Senia seated.jpeg" class="slideshow-img" alt="Senia seated">
-                    <img src="images/Senia standing.jpeg" class="slideshow-img" alt="Senia standing">
-                    <img src="images/Web Developer Image.jpg" class="slideshow-img" alt="Web Developer">
+                <div class="animation-wrapper">
+                    <!-- Left Column - Images slide UP -->
+                    <div class="animation-column" id="column-left">
+                        <div class="slide-img slide-up" id="left-current"></div>
+                        <div class="slide-img slide-up" id="left-next"></div>
+                    </div>
+                    <!-- Right Column - Images slide DOWN -->
+                    <div class="animation-column" id="column-right">
+                        <div class="slide-img slide-down" id="right-current"></div>
+                        <div class="slide-img slide-down" id="right-next"></div>
+                    </div>
                 </div>
 
                 <style>
-                    /* Slideshow styles */
-                    #animation-slideshow {
+                    /* Two-column animation layout */
+                    .animation-wrapper {
                         display: flex;
-                        align-items: center;
-                        justify-content: center;
+                        gap: 15px;
+                        margin: 20px 0;
+                        height: 400px;
                     }
 
-                    #animation-slideshow .slideshow-img {
+                    .animation-column {
+                        flex: 1;
+                        position: relative;
+                        overflow: hidden;
+                        border-radius: 5px;
+                        background-color: #e8edf2;
+                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+                    }
+
+                    .slide-img {
                         position: absolute;
                         top: 0;
                         left: 0;
                         width: 100%;
                         height: 100%;
-                        object-fit: contain;
-                        opacity: 0;
-                        transition: opacity 1s ease-in-out;
-                        margin: 0;
-                        border-radius: 0;
-                        box-shadow: none;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        transition: none;
                     }
 
-                    #animation-slideshow .slideshow-img.active {
-                        opacity: 1;
+                    /* --- Slide UP (left column) --- */
+                    .slide-up {
+                        transform: translateY(0);
+                    }
+                    .slide-up.enter {
+                        transform: translateY(100%);
+                    }
+                    .slide-up.enter.go {
+                        transform: translateY(0);
+                        transition: transform 1s ease-in-out;
+                    }
+                    .slide-up.exit.go {
+                        transform: translateY(-100%);
+                        transition: transform 1s ease-in-out;
+                    }
+
+                    /* --- Slide DOWN (right column) --- */
+                    .slide-down {
+                        transform: translateY(0);
+                    }
+                    .slide-down.enter {
+                        transform: translateY(-100%);
+                    }
+                    .slide-down.enter.go {
+                        transform: translateY(0);
+                        transition: transform 1s ease-in-out;
+                    }
+                    .slide-down.exit.go {
+                        transform: translateY(100%);
+                        transition: transform 1s ease-in-out;
+                    }
+
+                    @media (max-width: 480px) {
+                        .animation-wrapper {
+                            height: 280px;
+                            gap: 8px;
+                        }
                     }
                 </style>
 
                 <script>
                     (function () {
-                        const container = document.getElementById('animation-slideshow');
-                        const images = container.querySelectorAll('.slideshow-img');
-                        let currentIndex = -1;
+                        var imageSources = [
+                            'images/Alvine seated.jpeg',
+                            'images/Alvine standing.jpeg',
+                            'images/Andris seated.jpeg',
+                            'images/Andris standing.jpeg',
+                            'images/Content Writer Image.jpg',
+                            'images/Designer Image.jpg',
+                            'images/Editor Image.jpg',
+                            'images/Faith seated.jpeg',
+                            'images/Faith standing.jpeg',
+                            'images/IT Technician-Data Analyst Image.jpg',
+                            'images/Phrancina seated.jpeg',
+                            'images/Phrancina standing.jpeg',
+                            'images/Senia seated.jpeg',
+                            'images/Senia standing.jpeg',
+                            'images/Web Developer Image.jpg'
+                        ];
 
-                        function showRandomImage() {
-                            let nextIndex;
-                            // Pick a random image that is different from the current one
+                        // Track which image index is shown in each column (-1 = none)
+                        var leftIndex = -1;
+                        var rightIndex = -1;
+
+                        // Get DOM elements
+                        var leftCurrent = document.getElementById('left-current');
+                        var leftNext = document.getElementById('left-next');
+                        var rightCurrent = document.getElementById('right-current');
+                        var rightNext = document.getElementById('right-next');
+
+                        // Pick a random index, avoiding the indices in the exclude array
+                        function pickRandom(exclude) {
+                            var idx;
                             do {
-                                nextIndex = Math.floor(Math.random() * images.length);
-                            } while (nextIndex === currentIndex && images.length > 1);
-
-                            // Fade out current image
-                            if (currentIndex >= 0) {
-                                images[currentIndex].classList.remove('active');
-                            }
-
-                            // Fade in next image
-                            images[nextIndex].classList.add('active');
-                            currentIndex = nextIndex;
+                                idx = Math.floor(Math.random() * imageSources.length);
+                            } while (exclude.indexOf(idx) !== -1);
+                            return idx;
                         }
 
-                        // Show the first image immediately
-                        showRandomImage();
+                        function setImage(el, idx) {
+                            el.style.backgroundImage = 'url("' + imageSources[idx] + '")';
+                        }
 
-                        // Cycle every 3 seconds
-                        setInterval(showRandomImage, 3000);
+                        // Transition a column: currentEl exits, nextEl enters with new image
+                        function transitionColumn(currentEl, nextEl, newIdx, direction) {
+                            // Reset classes
+                            currentEl.className = 'slide-img ' + direction;
+                            nextEl.className = 'slide-img ' + direction;
+
+                            // Set the new image on the next element
+                            setImage(nextEl, newIdx);
+
+                            // Position next element at its entry point
+                            nextEl.classList.add('enter');
+
+                            // Force reflow so the browser registers the starting position
+                            void nextEl.offsetWidth;
+
+                            // Start animations
+                            currentEl.classList.add('exit', 'go');
+                            nextEl.classList.add('go');
+                        }
+
+                        // Initialize: show first images without animation
+                        leftIndex = pickRandom([]);
+                        rightIndex = pickRandom([leftIndex]);
+
+                        setImage(leftCurrent, leftIndex);
+                        setImage(rightCurrent, rightIndex);
+
+                        // Track which div is "current" vs "next" so we can swap them
+                        var leftDivs = [leftCurrent, leftNext];
+                        var rightDivs = [rightCurrent, rightNext];
+                        var leftSwap = 0;
+                        var rightSwap = 0;
+
+                        // Cycle left column (slides UP) every 3s
+                        setInterval(function () {
+                            var cur = leftDivs[leftSwap];
+                            var nxt = leftDivs[1 - leftSwap];
+                            var newIdx = pickRandom([leftIndex, rightIndex]);
+                            transitionColumn(cur, nxt, newIdx, 'slide-up');
+                            leftIndex = newIdx;
+                            leftSwap = 1 - leftSwap;
+                        }, 3000);
+
+                        // Cycle right column (slides DOWN) every 3s, offset by 1.5s
+                        setTimeout(function () {
+                            setInterval(function () {
+                                var cur = rightDivs[rightSwap];
+                                var nxt = rightDivs[1 - rightSwap];
+                                var newIdx = pickRandom([rightIndex, leftIndex]);
+                                transitionColumn(cur, nxt, newIdx, 'slide-down');
+                                rightIndex = newIdx;
+                                rightSwap = 1 - rightSwap;
+                            }, 3000);
+                        }, 1500);
                     })();
                 </script>
             </div>
