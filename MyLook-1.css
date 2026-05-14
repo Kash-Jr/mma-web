@@ -46,11 +46,15 @@ body {
 .page-title {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #1a5f7a;
+    color: #ffffff;
     margin-bottom: 10px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
+    background: linear-gradient(135deg, #1a5f7a 0%, #2a7a9e 100%);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .page-heading {
@@ -71,7 +75,7 @@ nav {
     padding: 0;
     margin-bottom: 30px;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 nav ul {
@@ -121,7 +125,7 @@ nav .active {
     padding: 20px;
     background-color: #fff;
     border-radius: 5px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .layer-header {
@@ -176,7 +180,7 @@ img {
     height: auto;
     border-radius: 5px;
     margin: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .image-container {
@@ -219,7 +223,7 @@ img {
     position: relative;
     overflow: hidden;
     border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease;
 }
 
@@ -271,14 +275,23 @@ img {
 
 .group-member {
     margin-bottom: 25px;
-    padding-bottom: 20px;
+    padding: 15px;
     border-bottom: 1px solid #ddd;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    background-color: #fafbfc;
+}
+
+.group-member:hover {
+    background-color: #f0f4f8;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
 }
 
 .group-member:last-child {
     border-bottom: none;
     margin-bottom: 0;
-    padding-bottom: 0;
+    padding-bottom: 15px;
 }
 
 /* ============================================
